@@ -1,0 +1,13 @@
+# Um serviço equivale a um processo independente de agendamento.
+services:
+  schedule-template:
+    # Nome local da imagem construída a partir do Dockerfile.
+    image: schedule-template:latest
+    build: .
+    # Reinicia após encerramentos, exceto quando parado explicitamente.
+    restart: unless-stopped
+    # Injeta valores do ambiente/.env; :- define o padrão quando ausente ou vazio.
+    environment:
+      SCHEDULE_INTERVAL_SECONDS: ${SCHEDULE_INTERVAL_SECONDS:-21600}
+      CONN_STR_POSTGRESQL: ${CONN_STR_POSTGRESQL:-}
+      CONN_STR_SQLSERVER: ${CONN_STR_SQLSERVER:-}

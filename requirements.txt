@@ -1,0 +1,6 @@
+# Carrega variáveis locais do arquivo .env.
+python-dotenv~=1.1.0
+# Driver PostgreSQL com distribuição binária.
+psycopg[binary]~=3.2.10
+# Interface ODBC; o driver de sistema é instalado separadamente.
+pyodbc~=5.2.0

@@ -1,0 +1,11 @@
+# Metadados e automações não necessários no container.
+.git
+.github
+# Configuração local: variáveis são injetadas pelo Compose.
+.env
+.env.*
+# Ambiente e caches locais não devem ser copiados para a imagem.
+.venv
+__pycache__
+**/__pycache__
+*.pyc
